@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block content %}
+<div class="button-container">
+    <a href="{% url 'signup' %}" class="button">Join</a>
+    <a href="{% url 'users' %}" class="button">Profiles</a>
+  </div>
 
 <h1> Welcome to My World</h1>
 
-<div class="button-container">
-    <a href="{% url 'signup' %}" class="button">Join</a>
-    <a href="{% url 'login' %}" class="button">Login</a>
-  </div>
 
     <img src="{% static 'images/zzan.jpeg' %}" alt="홈 화면">
 

@@ -6,7 +6,8 @@ def index(request):
     return render(request, 'index.html')
 
 def users(request):
-    return render(request, 'user.html')
+    return render(request, 'users.html')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -19,3 +20,6 @@ def signup(request):
         form = CustomUserCreationForm()
 
     return render(request, 'user/signup.html', {'form': form})
+
+def login(request):
+    return render(request, 'USER/login.html')
