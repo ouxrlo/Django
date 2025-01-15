@@ -1,13 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 
 
-
-class USERForm(forms.Form):
-    title = forms.CharField(max_length=10)
-    content = forms.CharField()
 
 
 # 사용자 가입을 위한 폼 정의
@@ -15,7 +12,7 @@ class SignupForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput)
 
     class Meta:
-        model = User
+        model = get_user_model()
         fields = ['username', 'email', 'password']
 
 

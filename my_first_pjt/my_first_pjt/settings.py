@@ -131,5 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # 로그인 후 리디렉션할 페이지
+ 
 
-LOGIN_REDIRECT_URL = '/'  
+LOGIN_REDIRECT_URL = '/profile/'

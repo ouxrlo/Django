@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{% url 'signup' %}">Join</a> 
+<a href="{% url 'index' %}">Home</a>
+
+<h1>Let's play. Come oneee in 🐥</h1>
+
+<form action="{% url 'login' %}"  method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- 로그인 폼 필드 출력 -->
+        <button type="submit">Login</button>
+</form>
+
+
+{% endblock %}

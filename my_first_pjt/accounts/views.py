@@ -5,24 +5,19 @@ from django.contrib.auth.forms import AuthenticationForm
 from .forms import LoginForm, SignupForm
 
 
-    
 
 def login_view(request):
-    if request.method == "POST":
-        form = LoginForm(request.POST)
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request, user)
-                return redirect('user_profile', username=user.username)
-            else:
-                form.add_error(None, '아이디 또는 비밀번호가 잘못되었습니다.')
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
     else:
-        form = LoginForm()
+        form = AuthenticationForm()
 
-    return render(request, 'accounts/login.html', {'form': form})
+    return render(request, 'USER/login.html', {'form': form})
+
 
 
 def logout_view(request):
