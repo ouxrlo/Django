@@ -5,3 +5,6 @@ def index(request):
 
 def users(request):
     return render(request, 'user.html')
+
+def signup(request):
+    return render(request, 'signup.html')
