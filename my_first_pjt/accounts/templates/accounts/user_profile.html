@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ user.username }}`s space </h1>
+
+<p><strong>아이디:</strong> {{ user.username }}</p>
+<p><strong>이메일:</strong> {{ user.email }}</p>
+
+
+<a href="{% url 'index' %}">Home</a>
+{% endblock %}
