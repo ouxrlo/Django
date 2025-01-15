@@ -23,5 +23,5 @@ urlpatterns = [
     path('index/', views.index, name='index'),  
     path('users/', views.users, name='users'),  
     path('signup/', views.signup, name='signup'),  
-    path('users/', include('users.urls')),  
+    path('users/', include('USER.urls')),  
 ]
