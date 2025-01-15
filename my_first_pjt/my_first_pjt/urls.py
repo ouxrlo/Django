@@ -23,5 +23,7 @@ urlpatterns = [
     path('index/', views.index, name='index'),  
     path('users/', views.users, name='users'),  
     path('signup/', views.signup, name='signup'),  
-    path('users/', include('USER.urls')),  
+    path('users/', include('USER.urls')), 
+    path('accounts/', include('accounts.urls')),
+    path('login/', views.login),
 ]
